@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a Sketch</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <h1>Etch a Sketch</h1>
+    <main>
+        <div id="container"></div>
+
+        <div class="controls">
+            <div>
+                <label for="color">Color</label>
+                <input type="color" class="user_color" id="color">
+            </div>
+            <div>
+                <label for="range">Pen width</label>
+                <input type="range" class="user_range" min="1" max="64" value="16" id="range">
+                <span class="value">16</span>
+            </div>
+
+            <div>
+                <button class="btn btn_clear">Clear</button>
+            </div>
+            <div>
+                <button class="btn btn_random-color">Random Color</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
