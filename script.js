@@ -20,6 +20,21 @@ function createGrid(size) {
     }
 }
 
+function changeRange(value) {
+    document.querySelector(".value").textContent = value;
+    container.innerHTML = "";
+
+    grid_count = value;
+    createGrid(grid_count);
+}
+
+function clear() {
+    randomMode = false;
+    document.querySelectorAll(".grids").forEach((grid) => {
+        grid.style.backgroundColor = "white";
+    });
+}
+
 container.addEventListener("mouseover", (e) => {
     if (e.target.className !== "grids") return;
     currentColor = userColor.value;
@@ -34,19 +49,8 @@ container.addEventListener("mouseover", (e) => {
     e.target.style.backgroundColor = currentColor;
 });
 
-document.querySelector(".btn_clear").addEventListener("click", () => {
-    randomMode = false;
-    document.querySelectorAll(".grids").forEach((grid) => {
-        grid.style.backgroundColor = "white";
-    });
-});
+document.querySelector(".btn_clear").addEventListener("click", clear);
 
-range.addEventListener("change", () => {
-    document.querySelector(".value").textContent = range.value;
-    container.innerHTML = "";
-
-    grid_count = range.value;
-    createGrid(grid_count);
-});
+range.addEventListener("change", () => changeRange(range.value));
 
 createGrid(grid_count);
